@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+  	<head>
+   		<base target="_top">
+    	<link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+
+    	<style>
+    	.branding-below {
+      		bottom: 56px;
+      		top: 0;
+    	}
+
+    	.branding-text {
+      		left: 7px;
+      		position: relative;
+      		top: 3px;
+    	}
+
+    	.col-contain {
+      		overflow: hidden;
+    	}
+
+    	.col-one {
+      		float: left;
+      		width: 50%;
+    	}
+
+    	.logo {
+      		vertical-align: middle;
+    	}
+
+    	.radio-spacer {
+      		height: 20px;
+    	}
+
+    	.width-100 {
+      		width: 100%;
+    	}
+    	</style>
+    	
+  	</head>
+
+  	<body>
+    	<div class="sidebar branding-below">
+      		<form>
+        	<div class="block col-contain">
+          		<div class="col-one">
+            		<b>Styles</b>
+            		<div>
+              			<input type="radio" name="origin" id="radio-origin-auto" value="" checked="checked">
+              			<label for="radio-origin-auto">MLA</label>
+            		</div>
+            	</div>
+            </div>
+
+            <input type="text" id="userInput"=>give me input</input>
+    		<button onclick="test()">Submit</button>
+    		<script>
+        		function test()
+        		{
+            		var userInput = prompt("Give me input");
+            		document.write(userInput);
+        		}
+    		</script>
+            
+            <!--
+            <div class="block col-contain">
+                <div class="col-one">
+                    Article Title:<br>
+                    <input type="text" name="articletitle"
+                    <br>
+                </div>
+                <div class="col-one">
+                    Contributors:<br>
+                    <input type="text" name="author"
+                    <br>
+                </div>
+            </div>
+            
+            <div class="block col-contain">
+                <div class="col-one">
+                    <input type="button" value="Insert Citation">
+                </div>
+            </div>-->
+            
+           </form>
+        </div>     	
+  	</body>
+
+</html>
