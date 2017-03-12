@@ -1,6 +1,10 @@
 #CiteIt
 
-##HackUVic 2017
+A Manual Entry Citation Extension for Google Docs.
+
+## Version:
+
+Currently under build.
 
 ## Credits
 
