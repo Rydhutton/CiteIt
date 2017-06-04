@@ -1,3 +1,43 @@
+function MLAJournal()
+{
+    var print = document.getElementById("print");
+    var articleTitle = document.getElementById("articleTitle");
+    var authors = document.getElementById("authors");
+    var journalTitle = document.getElementById("journalTitle");
+    var volume = document.getElementById("volume");
+    var issue = document.getElementById("issue");
+    var series = document.getElementById("series");
+    var yearPub = document.getElementById("yearPub");
+    var pagestart = document.getElementById("pagestart");
+    var pageend = document.getElementById("pageend");
+    var url = document.getElementById("url");
+
+    var pr = print.value || "";
+    var at = articleTitle.value || "";
+    var au = authors.value || "";
+    var jt = journalTitle.value || "";
+    var vol = volume.value || "";
+    var iss = issue.value || "";
+    var ser = series.value || "";
+    var yp = yearPub.value || "";
+    var ps = pagestart.value || "";
+    var pe = pageend.value || "";
+    var ul = url.value || "";
+    
+    var citation = MLAJournalToString(pr, at, au, jt, vol, iss, ser, yp, ps, pe, ul);
+    alert(citation);
+}
+
+function MLAWebsite()
+{
+    
+}
+
+
+
+//var citation = submit.addEventListener("click", MLAJournal(pr, at, au, jt, ser, vol, yp, ps, pe, ul));
+//alert(citation);
+
 // What should the add-on do after it is installed
 function onInstall() 
 {
@@ -22,12 +62,17 @@ function showSidebar()
   		.showSidebar(ui);
 }
 
+
+
+
+
+
 /* citation formatting functions below this point */
 
-function AuthorsToString(author[])
+function AuthorsToString(author)
 {
 	var authors = "";
-
+    /*
 	for(i = 0; i < author.length; i++)
 	{
 		authors += author[i][3] + ", " + author[i][1] + " " + author[i][2];
@@ -40,7 +85,10 @@ function AuthorsToString(author[])
 		if(i + 2 == author.length) // if we are about to hit the last item in the list add word and
 			authors += "and ";
 	}
-
+    */
+    
+    authors = author + ", ";
+    
 	return authors;
 }
 
@@ -60,8 +108,8 @@ function YearPublishedToString(yp)
 {
 	var yearPub = "";
 
-	if(pub != null)
-		yearPub = "(" + pub + "): ";
+	if(yp != null)
+		yearPub = "(" + yp + "): ";
 
 	return yearPub;
 }
@@ -112,10 +160,10 @@ function VolumeToString(vol, iss)
 
 	if(vol != null)
 	{
-		if(is == null)
+		if(iss == null)
 			volume = vol + ". "
 		else
-			volume = vol + "." + is + " ";
+			volume = vol + "." + iss + " ";
 	}
 
 	return volume;
@@ -125,14 +173,14 @@ function PagesToString(ps, pe)
 {
 	var pages = "";
 
-	if(ps != null and pe != null)
+	if(ps != null && pe != null)
 		pages = ps + "-" + pe + ". ";
 
 	return pages;
 }
 
-function MLAJournal(p, at, author[], jt, vol, is, ser, pub, ps, pe, url)
-{
+function MLAJournalToString(p, at, author, jt, vol, is, ser, yp, ps, pe, url)
+{   
 	var print = PrintToString(p);
 	var articleTitle = ArticleTitleToString(at);
 	var authors = AuthorsToString(author);
@@ -146,3 +194,30 @@ function MLAJournal(p, at, author[], jt, vol, is, ser, pub, ps, pe, url)
 	return citation;
 }
 
+
+
+
+
+/* JQuery stuff */
+
+$(document).ready(function(){
+    //var currentStep = 0;
+    
+    $("#MLAJournalpanel").hide();
+    $("#MLAWebsitepanel").hide();
+    
+    $("#btnMLAJournal").click(function(){
+        $("#MLAWebsitepanel").hide();
+        $("#MLAJournalpanel").show();
+        
+        //currentStep = 1;
+    });
+    
+    $("#btnMLAWebsite").click(function(){
+        $("#MLAJournalpanel").hide();
+        $("#MLAWebsitepanel").show();
+        
+        //currentStep = 2;
+    });
+   
+});

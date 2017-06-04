@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
-
   	<head>
    		<base target="_top">
     	<link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
-
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="Code.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
     	<style>
     	.branding-below {
       		bottom: 56px;
@@ -43,49 +46,36 @@
 
   	<body>
     	<div class="sidebar branding-below">
-      		<form>
-        	<div class="block col-contain">
-          		<div class="col-one">
-            		<b>Styles</b>
-            		<div>
-              			<input type="radio" name="origin" id="radio-origin-auto" value="" checked="checked">
-              			<label for="radio-origin-auto">MLA</label>
-            		</div>
-            	</div>
-            </div>
-
-            <input type="text" id="userInput"=>give me input</input>
-    		<button onclick="test()">Submit</button>
-    		<script>
-        		function test()
-        		{
-            		var userInput = prompt("Give me input");
-            		document.write(userInput);
-        		}
-    		</script>
+            <input id="btnMLAJournal" type="button" value="MLA Journal"></input>
+            <input id="btnMLAWebsite" type="button" value="MLA Website"></input>
             
-            <!--
-            <div class="block col-contain">
-                <div class="col-one">
-                    Article Title:<br>
-                    <input type="text" name="articletitle"
-                    <br>
-                </div>
-                <div class="col-one">
-                    Contributors:<br>
-                    <input type="text" name="author"
-                    <br>
+            <div id="MLAJournalpanel" class="panel">
+                <div class="panel-body">
+                    <h2>MLA Journal</h2>
+                    <ul>
+                        <li><input type="text" id="print"> print type</input></li>
+                        <li><input type="text" id="articleTitle"> article title</input></li>
+                        <li><input type="text" id="authors"> authors</input></li>
+                        <li><input type="text" id="journalTitle"> journal title</input></li>
+                        <li><input type="text" id="volume"> volume</input></li>
+                        <li><input type="text" id="issue"> issue</input></li>
+                        <li><input type="text" id="series"> series</input></li>
+                        <li><input type="text" id="yearPub"> year published</input></li>
+                        <li><input type="text" id="pagestart"> page start</input></li>
+                        <li><input type="text" id="pageend"> page end</input></li>
+                        <li><input type="text" id="url"> url</input></li>
+                    </ul>
+                    <button onClick="MLAJournal();" id="submit">Submit</button>
                 </div>
             </div>
             
-            <div class="block col-contain">
-                <div class="col-one">
-                    <input type="button" value="Insert Citation">
+            <div id="MLAWebsitepanel" class="panel">
+                <div class="panel-body">
+                    <h1>dadadda</h1>
+                    <p>surprise!"</p>
                 </div>
-            </div>-->
+            </div>
             
-           </form>
         </div>     	
   	</body>
-
 </html>
